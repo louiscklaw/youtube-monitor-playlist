@@ -108,7 +108,7 @@ const fs = require('fs');
     '有線新聞',
     '宅推介',
     '#米紙',
-    '三立新聞網',
+    // '三立新聞網',
   ];
   for (var i = 0; i < wanted_list.length; i++) {
     output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
