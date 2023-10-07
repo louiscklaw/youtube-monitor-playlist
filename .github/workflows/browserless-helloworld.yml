@@ -32,4 +32,5 @@ jobs:
         run: |
           cd browserless-helloworld
           node ./index.js
+          node ./puppeteer-helloworld.js
           cd -
