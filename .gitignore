@@ -1,3 +1,5 @@
+browserless-helloworld/screens/*.png
+
 **/*.del
 node_modules
 
