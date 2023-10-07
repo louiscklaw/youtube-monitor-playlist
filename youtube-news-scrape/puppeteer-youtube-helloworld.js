@@ -85,7 +85,7 @@ const fs = require('fs');
     output = { ...output, state: 'error', error };
   }
 
-  var wanted_list = ['Channel C', '01新聞', '星島頭條', '一線搜查', '有線新聞'];
+  var wanted_list = ['今日新聞', 'Channel C', '01新聞', '星島頭條', '一線搜查', '有線新聞'];
   for (var i = 0; i < wanted_list.length; i++) {
     output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
   }
