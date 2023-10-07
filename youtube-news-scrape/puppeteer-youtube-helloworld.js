@@ -4,7 +4,7 @@ const fs = require('fs');
 
 (async () => {
   var browser;
-  var output = { state: 'init', debug: {}, error: {}, result: [] };
+  var output = { state: 'init', debug: {}, error: {}, scrape_result: [], news_link: [] };
 
   async function scrapeYoutubeVideoLink(page) {
     return await page.evaluate(() => {
@@ -21,7 +21,7 @@ const fs = require('fs');
         for (var i = 0; i < wanted_list.length; i++) {
           var found = text_content.search(wanted_list[i]) > -1;
 
-          if (true) {
+          if (found) {
             video_list.push({ name, link, time_length });
             break;
           }
@@ -42,21 +42,21 @@ const fs = require('fs');
     await page.screenshot({ path: './screens/01-hk01-helloworld.png' });
     var video_result = await scrapeYoutubeVideoLink(page);
     video_list = JSON.parse(video_result);
-    video_list.forEach(v => output.result.push(v));
+    video_list.forEach(v => output.scrape_result.push(v));
 
     await page.goto('https://www.youtube.com/@ChannelCHK/videos', { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1920, height: 1080 * 5 });
     await page.screenshot({ path: './screens/01-channel_c-helloworld.png' });
     var video_result = await scrapeYoutubeVideoLink(page);
     video_list = JSON.parse(video_result);
-    video_list.forEach(v => output.result.push(v));
+    video_list.forEach(v => output.scrape_result.push(v));
 
     await page.goto('https://www.youtube.com/@SingTaoHeadline/videos', { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1920, height: 1080 * 5 });
     await page.screenshot({ path: './screens/01-sing-tao-headline-helloworld.png' });
     var video_result = await scrapeYoutubeVideoLink(page);
     video_list = JSON.parse(video_result);
-    video_list.forEach(v => output.result.push(v));
+    video_list.forEach(v => output.scrape_result.push(v));
 
     output = { ...output, state: 'done' };
   } catch (error) {
@@ -64,7 +64,10 @@ const fs = require('fs');
     output = { ...output, state: 'error', error };
   }
 
-  console.log({ output });
+  var wanted_list = ['01新聞', '星島頭條', 'Channel C'];
+  for (var i = 0; i < wanted_list.length; i++) {
+    output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
+  }
 
   fs.writeFileSync('./results/youtube_scrape_result.json', JSON.stringify(output, null, 2), { encoding: 'utf-8' });
 
