@@ -19,8 +19,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.commit_sha || github.sha }}
       - name: test local browserless response
         run: |
           curl -vLk http://localhost:3000
           node -v
           npm -v
+          node
+      - name: test local browserless response
+        run: |
+          cd browserless-helloworld
+          node ./index.js
+          cd -
