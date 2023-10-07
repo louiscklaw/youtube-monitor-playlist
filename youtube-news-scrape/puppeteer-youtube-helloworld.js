@@ -65,6 +65,20 @@ const fs = require('fs');
     video_list = JSON.parse(video_result);
     video_list.forEach(v => output.scrape_result.push(v));
 
+    await page.goto('https://www.youtube.com/@mm.millmilk/videos', { waitUntil: 'networkidle2' });
+    await page.setViewport({ width: 1920, height: 1080 * 5 });
+    await page.screenshot({ path: './screens/01-mm-millmilk-helloworld.png' });
+    var video_result = await scrapeYoutubeVideoLink(page);
+    video_list = JSON.parse(video_result);
+    video_list.forEach(v => output.scrape_result.push(v));
+
+    await page.goto('https://www.youtube.com/@GadgetGangHK/videos', { waitUntil: 'networkidle2' });
+    await page.setViewport({ width: 1920, height: 1080 * 5 });
+    await page.screenshot({ path: './screens/01-GadgetGangHK-helloworld.png' });
+    var video_result = await scrapeYoutubeVideoLink(page);
+    video_list = JSON.parse(video_result);
+    video_list.forEach(v => output.scrape_result.push(v));
+
     output = { ...output, state: 'done' };
   } catch (error) {
     console.log(error);
