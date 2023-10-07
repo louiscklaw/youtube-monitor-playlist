@@ -1,10 +1,9 @@
-name: browserless-helloworld
+name: youtube-news-scrape
 
-# NOTE: disable action
-# on: [push]
+on: [push]
 
 jobs:
-  browserless-helloworld:
+  youtube-news-scrape:
     runs-on: ubuntu-latest
     steps:
       - name: Run Browserless Chrome
