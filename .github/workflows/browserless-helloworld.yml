@@ -16,5 +16,11 @@ jobs:
         run: |
           docker ps -a
           docker logs test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - name: test local browserless response
-        run: curl -vLk http://localhost:3000
+        run: |
+          curl -vLk http://localhost:3000
+          node -v
+          npm -v
