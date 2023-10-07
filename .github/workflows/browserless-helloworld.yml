@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Browserless Chrome
-        run: docker run -d -p 3000:3000 --network host browserless/chrome:1.57-chrome-stable
+        run: docker run -d -p 3000:3000 browserless/chrome:1.57-chrome-stable
       - name: docker ps -a
         run: docker ps -a
       - name: test local browserless response
