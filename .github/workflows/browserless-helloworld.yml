@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Run Browserless Chrome
         run: docker run -d --name test -p 3000:3000 browserless/chrome:1.57-chrome-stable
+      - name: Sleep for 120 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '120s'
       - name: docker ps -a
         run: |
           docker ps -a
