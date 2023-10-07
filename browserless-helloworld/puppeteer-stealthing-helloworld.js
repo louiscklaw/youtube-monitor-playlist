@@ -1,5 +1,8 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 
 (async () => {
   var browser;
@@ -9,7 +12,8 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
 
     // Full puppeteer API is available
-    await page.goto('https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html');
+    await page.goto('https://bot.sannysoft.com/');
+
     await page.screenshot({ path: './screens/01-stealthing-helloworld.png' });
 
     output = { ...output, state: 'done' };
