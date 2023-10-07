@@ -39,5 +39,4 @@ jobs:
         with:
           name: screenshots
           path: |
-            youtube-news-scrape/screens/*.png
             youtube-news-scrape/results/*.json
