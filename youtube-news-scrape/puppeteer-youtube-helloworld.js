@@ -79,13 +79,37 @@ const fs = require('fs');
     video_list = JSON.parse(video_result);
     video_list.forEach(v => output.scrape_result.push(v));
 
+    await page.goto('https://www.youtube.com/@ricezi2hk/videos', { waitUntil: 'networkidle2' });
+    await page.setViewport({ width: 1920, height: 1080 * 5 });
+    await page.screenshot({ path: './screens/01-ricezi2hk-helloworld.png' });
+    var video_result = await scrapeYoutubeVideoLink(page);
+    video_list = JSON.parse(video_result);
+    video_list.forEach(v => output.scrape_result.push(v));
+
+    await page.goto('https://www.youtube.com/@setn/videos', { waitUntil: 'networkidle2' });
+    await page.setViewport({ width: 1920, height: 1080 * 5 });
+    await page.screenshot({ path: './screens/01-setn-helloworld.png' });
+    var video_result = await scrapeYoutubeVideoLink(page);
+    video_list = JSON.parse(video_result);
+    video_list.forEach(v => output.scrape_result.push(v));
+
     output = { ...output, state: 'done' };
   } catch (error) {
     console.log(error);
     output = { ...output, state: 'error', error };
   }
 
-  var wanted_list = ['今日新聞', 'Channel C', '01新聞', '星島頭條', '一線搜查', '有線新聞', '宅推介'];
+  var wanted_list = [
+    '今日新聞',
+    'Channel C',
+    '01新聞',
+    '星島頭條',
+    '一線搜查',
+    '有線新聞',
+    '宅推介',
+    '#米紙',
+    '三立新聞網',
+  ];
   for (var i = 0; i < wanted_list.length; i++) {
     output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
   }
