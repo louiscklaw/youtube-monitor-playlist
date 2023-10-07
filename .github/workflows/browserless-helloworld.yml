@@ -3,7 +3,7 @@ name: browserless-helloworld
 on: [push]
 
 jobs:
-  Explore-GitHub-Actions:
+  browserless-helloworld:
     runs-on: ubuntu-latest
     steps:
       - name: Run Browserless Chrome
