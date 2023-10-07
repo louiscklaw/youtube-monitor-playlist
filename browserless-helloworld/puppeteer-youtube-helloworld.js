@@ -9,8 +9,8 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
 
     // Full puppeteer API is available
-    await page.goto('https://www.carousell.com.hk/');
-    await page.screenshot({ path: './screens/01-carousell-helloworld.png' });
+    await page.goto('https://www.youtube.com/@01official/videos');
+    await page.screenshot({ path: './screens/01-youtube-helloworld.png' });
 
     output = { ...output, state: 'done' };
   } catch (error) {
