@@ -35,6 +35,7 @@ jobs:
           node ./index.js
           node ./puppeteer-helloworld.js
           node ./puppeteer-stealthing-helloworld.js
+          node ./puppeteer-youtube-helloworld.js
           cd -
       - uses: actions/upload-artifact@v3
         with:
