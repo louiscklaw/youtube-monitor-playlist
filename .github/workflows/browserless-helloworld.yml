@@ -34,7 +34,7 @@ jobs:
           npm i
           node ./index.js
           node ./puppeteer-helloworld.js
-          node ./puppeteer-carousell-helloworld.js
+          node ./puppeteer-youtube-helloworld.js
           cd -
       - uses: actions/upload-artifact@v3
         with:
