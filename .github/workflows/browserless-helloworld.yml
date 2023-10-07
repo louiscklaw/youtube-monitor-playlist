@@ -34,3 +34,7 @@ jobs:
           node ./index.js
           node ./puppeteer-helloworld.js
           cd -
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: browserless-helloworld/screens/*.png
