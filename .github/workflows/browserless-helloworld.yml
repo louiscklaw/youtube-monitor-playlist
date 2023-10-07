@@ -1,0 +1,12 @@
+name: browserless-helloworld
+
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Browserless Chrome
+        run: docker run -d -p 3000:3000 --network host browserless/chrome:1.57-chrome-stable
+      - name: test local browserless response
+        run: curl -vLk http://localhost:3000
