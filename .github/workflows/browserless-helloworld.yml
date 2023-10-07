@@ -31,6 +31,7 @@ jobs:
       - name: test local browserless response
         run: |
           cd browserless-helloworld
+          npm i
           node ./index.js
           node ./puppeteer-helloworld.js
           cd -
