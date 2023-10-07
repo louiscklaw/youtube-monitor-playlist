@@ -4,7 +4,7 @@ const fs = require('fs');
 
 (async () => {
   var browser;
-  var output = { state: 'init', debug: {}, error: {}, scrape_result: [], news_link: [] };
+  var output = { state: 'init', debug: {}, error: {}, scrape_result: [], news_link: [], feed_discord: [] };
 
   async function scrapeYoutubeVideoLink(page) {
     return await page.evaluate(() => {
@@ -68,6 +68,8 @@ const fs = require('fs');
   for (var i = 0; i < wanted_list.length; i++) {
     output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
   }
+
+  output.news_link.forEach(l => output.feed_discord.push(l.link));
 
   fs.writeFileSync('./results/youtube_scrape_result.json', JSON.stringify(output, null, 2), { encoding: 'utf-8' });
 
