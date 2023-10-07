@@ -31,15 +31,12 @@ jobs:
           node
       - name: test local browserless response
         run: |
-          cd browserless-helloworld
+          cd youtube-news-scrape
           npm i
           node ./index.js
-          node ./puppeteer-helloworld.js
-          node ./puppeteer-stealthing-helloworld.js
           node ./puppeteer-youtube-helloworld.js
-          node ./puppeteer-Request-Interception-helloworld.js
           cd -
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: browserless-helloworld/screens/*.png
+          path: youtube-news-scrape/screens/*.png

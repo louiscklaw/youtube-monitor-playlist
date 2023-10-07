@@ -1,4 +1,4 @@
-browserless-helloworld/screens/*.png
+**/screens/*.png
 
 **/*.del
 node_modules

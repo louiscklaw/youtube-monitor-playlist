@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer-extra');
 
 (async () => {
   var browser;
-  var output = { state: 'init', debug: {}, error: {} };
+  var output = { state: 'init', debug: {}, error: {}, result: [] };
   try {
     browser = await puppeteer.connect({ browserWSEndpoint: `ws://localhost:3000?--window-size=1920,1080` });
     const page = await browser.newPage();
