@@ -76,7 +76,11 @@ const fs = require('fs');
     output.scrape_result.filter(t => t.name.search(wanted_list[i]) > -1).forEach(r => output.news_link.push(r));
   }
 
-  output.news_link.forEach(l => output.feed_discord.push(l.link));
+  output.news_link.forEach(l => {
+    if (output.feed_discord.indexOf(l.link) < 0) {
+      output.feed_discord.push(l.link);
+    }
+  });
 
   fs.writeFileSync('./results/youtube_scrape_result.json', JSON.stringify(output, null, 2), { encoding: 'utf-8' });
 
