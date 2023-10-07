@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer-extra');
+const puppeteer = require('puppeteer');
 
 (async () => {
   var browser;
@@ -9,8 +9,8 @@ const puppeteer = require('puppeteer-extra');
     const page = await browser.newPage();
 
     // Full puppeteer API is available
-    await page.goto('https://www.youtube.com/@01official/videos');
-    await page.screenshot({ path: './screens/01-youtube-helloworld.png' });
+    await page.goto('https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html');
+    await page.screenshot({ path: './screens/01-stealthing-helloworld.png' });
 
     output = { ...output, state: 'done' };
   } catch (error) {
