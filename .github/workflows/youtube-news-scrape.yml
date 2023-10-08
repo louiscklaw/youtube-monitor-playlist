@@ -43,3 +43,11 @@ jobs:
           name: screenshots
           path: |
             youtube-news-scrape/results/*.json
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./youtube-news-scrape/results
+          publish_branch: test_youtube_scrape_result
+          force_orphan: true
