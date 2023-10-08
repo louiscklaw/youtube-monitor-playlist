@@ -1,6 +1,9 @@
 name: youtube-news-scrape
 
-on: [push]
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  push:
 
 jobs:
   youtube-news-scrape:
