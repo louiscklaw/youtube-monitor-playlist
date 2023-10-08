@@ -8,6 +8,9 @@ jobs:
   debug-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: test local browserless response
+        run: |
+          ls -ltrR
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
