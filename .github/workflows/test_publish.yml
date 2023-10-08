@@ -8,8 +8,7 @@ jobs:
   debug-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          folder: build # The folder the action should deploy.
