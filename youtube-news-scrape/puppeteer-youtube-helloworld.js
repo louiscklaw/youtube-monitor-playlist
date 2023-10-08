@@ -107,7 +107,12 @@ const fs = require('fs');
     '一線搜查',
     '有線新聞',
     '宅推介',
-    '#米紙',
+    '米紙',
+    '美味道來',
+    '700萬種生活',
+    '牌子嘢',
+    'Weekly_pedia',
+    '試一次',
     // '三立新聞網',
   ];
   for (var i = 0; i < wanted_list.length; i++) {
