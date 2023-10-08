@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '*/20 * * * *'
   push:
+  workflow_dispatch:
 
 jobs:
   youtube-news-scrape:
