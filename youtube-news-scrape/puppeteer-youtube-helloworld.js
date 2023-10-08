@@ -96,7 +96,7 @@ const fs = require('fs');
     output = { ...output, state: 'done' };
   } catch (error) {
     console.log(error);
-    output = { ...output, state: 'error', error };
+    output = { ...output, state: 'error puppeteer-youtube-helloworld.js', error };
   }
 
   var wanted_list = [
