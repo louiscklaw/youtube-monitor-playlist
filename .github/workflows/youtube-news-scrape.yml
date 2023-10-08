@@ -1,10 +1,10 @@
 name: youtube-news-scrape
 
-on:
-  schedule:
-    - cron: '*/20 * * * *'
-  push:
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '*/20 * * * *'
+#   push:
+#   workflow_dispatch:
 
 jobs:
   youtube-news-scrape:
