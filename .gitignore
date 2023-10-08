@@ -1,5 +1,6 @@
 **/screens/*.png
 **/youtube-news-scrape/**/*.json
+youtube-news-scrape/results/*.json
 
 **/*.del
 node_modules
