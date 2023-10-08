@@ -45,7 +45,7 @@ jobs:
           path: |
             youtube-news-scrape/results/*.json
 
-      - name: Deploy
+      - name: Publish json result
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
