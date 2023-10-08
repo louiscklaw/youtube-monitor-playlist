@@ -1,11 +1,11 @@
-name: youtube-news-scrape
+name: debug-deploy
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  youtube-news-scrape:
+  debug-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
