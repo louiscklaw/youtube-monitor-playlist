@@ -1,8 +1,8 @@
 name: debug-deploy
 
-on:
-  push:
-  workflow_dispatch:
+# on:
+#   push:
+#   workflow_dispatch:
 
 jobs:
   debug-deploy:
