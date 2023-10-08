@@ -8,7 +8,9 @@ jobs:
   debug-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Publish generated content to GitHub Pages
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
-          folder: build # The folder the action should deploy.
+          dir: dist
+          branch: gh-pages
+          token: ${{ secrets.ACCESS_TOKEN }}
