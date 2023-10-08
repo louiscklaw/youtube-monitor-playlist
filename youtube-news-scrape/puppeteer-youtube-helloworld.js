@@ -113,6 +113,7 @@ const fs = require('fs');
     '牌子嘢',
     'Weekly_pedia',
     '試一次',
+    '01開罐',
     // '三立新聞網',
   ];
   for (var i = 0; i < wanted_list.length; i++) {
