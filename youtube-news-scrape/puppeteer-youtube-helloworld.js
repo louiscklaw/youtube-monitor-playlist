@@ -114,6 +114,7 @@ const fs = require('fs');
     'Weekly_pedia',
     '試一次',
     '01開罐',
+    '01教煮',
     // '三立新聞網',
   ];
   for (var i = 0; i < wanted_list.length; i++) {
