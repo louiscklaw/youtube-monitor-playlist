@@ -131,7 +131,7 @@ const fs = require('fs');
 
   output.news_link.forEach(l => {
     if (output.feed_discord.indexOf(l.link) < 0) {
-      output.feed_discord.push(l.link);
+      output.feed_discord.links.push(l.link);
     }
   });
 
