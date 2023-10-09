@@ -39,7 +39,7 @@ const fs = require('fs');
   }
 
   try {
-    browser = await puppeteer.connect({ browserWSEndpoint: `ws://localhost:3000?--window-size=1920,1080` });
+    browser = await puppeteer.connect({ browserWSEndpoint: `ws://localhost:3000` });
     const page = await browser.newPage();
 
     // Full puppeteer API is available
