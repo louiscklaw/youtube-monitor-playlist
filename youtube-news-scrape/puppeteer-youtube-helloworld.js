@@ -23,7 +23,7 @@ const fs = require('fs');
         var name = e.querySelectorAll('yt-formatted-string')[1].textContent;
         var link = e.querySelector('a').href;
 
-        var wanted_list = ['minute ago', 'minutes ago', 'hour ago', 'hours ago'];
+        var wanted_list = ['second ago', 'seconds ago', 'minute ago', 'minutes ago', 'hour ago', 'hours ago'];
 
         for (var i = 0; i < wanted_list.length; i++) {
           var found = text_content.search(wanted_list[i]) > -1;
