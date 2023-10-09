@@ -109,6 +109,7 @@ const fs = require('fs');
   var wanted_list = [
     '今日新聞',
     'Channel C',
+    '01熱話',
     '01新聞',
     '港聞',
     '星島頭條',
