@@ -4,7 +4,14 @@ const fs = require('fs');
 
 (async () => {
   var browser;
-  var output = { state: 'init', debug: {}, error: {}, scrape_result: [], news_link: [], feed_discord: [] };
+  var output = {
+    state: 'init',
+    debug: {},
+    error: {},
+    scrape_result: [],
+    news_link: [],
+    feed_discord: { last_update: new Date().toISOString(), links: [] },
+  };
 
   async function scrapeYoutubeVideoLink(page) {
     return await page.evaluate(() => {
